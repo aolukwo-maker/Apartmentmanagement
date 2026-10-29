@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapesa Admin Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark">M</div>
+          <div><strong>mapesa</strong><span>admin console</span></div>
+        </div>
+        <div class="workspace-pill">
+          <span class="live-dot"></span><span>Mapesa Apartments</span>
+        </div>
+        <nav class="nav-list" aria-label="Main navigation">
+          <p class="nav-label">Workspace</p>
+          <a class="nav-item active" href="index.html">
+            <i data-lucide="layout-dashboard"></i><span>Overview</span>
+          </a>
+          <a
+            class="nav-item"
+            href="/Mapesa%20Apartment%20Management%20System/Admin%20Module/units.php"
+          >
+            <i data-lucide="building-2"></i><span>Units</span>
+          </a>
+          <a
+            class="nav-item"
+            href="/Mapesa%20Apartment%20Management%20System/management%20module/Tenant%20Management%20Module/index.php"
+          >
+            <i data-lucide="users"></i><span>Tenants</span>
+          </a>
+          <a
+            class="nav-item"
+            href="/Mapesa%20Apartment%20Management%20System/management%20module/Visitor%20%26%20Security%20Module/index.php"
+          >
+            <i data-lucide="scan-line"></i><span>Visitors & security</span>
+          </a>
+          <a class="nav-item" href="#team-access">
+            <i data-lucide="shield-check"></i><span>Team access</span>
+          </a>
+        </nav>
+        <div class="sidebar-footer">
+          <a
+            class="profile-mini"
+            href="../User%20%26%20Authentication%20Module/profile.php"
+          >
+            <div class="avatar avatar-coral" data-admin-initials>AD</div>
+            <div>
+              <strong data-admin-name>Administrator</strong
+              ><span data-admin-email>Admin account</span>
+            </div>
+            <i data-lucide="more-horizontal"></i>
+          </a>
+          <a
+            class="sidebar-logout"
+            href="../User%20%26%20Authentication%20Module/logout.php"
+          >
+            <i data-lucide="log-out"></i><span>Log out</span>
+          </a>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button
+            class="icon-button menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle navigation"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+          <div class="breadcrumbs">
+            <span>Admin console</span><i data-lucide="chevron-right"></i
+            ><strong id="breadcrumbCurrent">Overview</strong>
+          </div>
+          <div class="topbar-actions">
+            <a class="icon-button" href="#activityList" aria-label="Recent activity">
+              <i data-lucide="activity"></i>
+            </a>
+            <div class="topbar-divider"></div>
+            <a
+              class="top-profile"
+              href="../User%20%26%20Authentication%20Module/profile.php"
+            >
+              <div class="avatar avatar-coral" data-admin-initials>AD</div>
+              <span data-admin-name>Administrator</span
+              ><i data-lucide="chevron-down"></i>
+            </a>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="page-heading">
+            <div>
+              <p class="eyebrow" id="dashboardDate"></p>
+              <h1 id="pageTitle">Admin overview</h1>
+              <p class="heading-copy">
+                Here is what is happening across your apartment operations
+                today.
+              </p>
+            </div>
+            <div class="heading-actions">
+              <button class="button button-secondary" id="exportButton">
+                <i data-lucide="download"></i> Export report</button
+              ><button class="button button-primary" id="quickAction">
+                <i data-lucide="plus"></i> Add manager
+              </button>
+            </div>
+          </section>
+
+          <section class="metric-grid" aria-label="System summary">
+            <article class="metric-card">
+              <div class="metric-top">
+                <span class="metric-icon mint"
+                  ><i data-lucide="users-round"></i></span
+                ><span class="trend neutral">Live count</span
+                >
+              </div>
+              <p>Active users</p>
+              <strong id="activeUsersValue">--</strong
+              ><small id="activeUsersNote">Loading database records</small>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top">
+                <span class="metric-icon peach"
+                  ><i data-lucide="building-2"></i></span
+                ><span class="trend neutral">Live count</span
+                >
+              </div>
+              <p>Occupied units</p>
+              <strong id="occupiedUnitsValue">--</strong
+              ><small id="occupancyNote">Loading unit records</small>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top">
+                <span class="metric-icon blue"
+                  ><i data-lucide="shield-check"></i></span
+                ><span class="trend neutral">Live count</span>
+              </div>
+              <p>Active tenants</p>
+              <strong id="activeTenantsValue">--</strong
+              ><small id="activeTenantsNote">Loading tenant records</small>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top">
+                <span class="metric-icon lilac"
+                  ><i data-lucide="hard-drive"></i></span
+                ><span class="trend neutral">This month</span>
+              </div>
+              <p>Rent collected this month</p>
+              <strong id="rentCollectedValue">--</strong
+              ><small id="rentCollectedNote">Loading payment records</small>
+            </article>
+          </section>
+
+          <div class="dashboard-grid">
+            <section class="panel chart-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Occupancy overview</h2>
+                  <p>Current unit status from the live unit register</p>
+                </div>
+                <span class="trend neutral" id="occupancyRate">--</span>
+              </div>
+              <div class="chart-wrap">
+                <div class="y-axis">
+                  <span>100%</span><span>75%</span><span>50%</span
+                  ><span>25%</span><span>0%</span>
+                </div>
+                <div class="chart">
+                  <div class="grid-lines">
+                    <span></span><span></span><span></span><span></span
+                    ><span></span>
+                  </div>
+                  <svg
+                    viewBox="0 0 700 240"
+                    preserveAspectRatio="none"
+                    aria-label="Occupancy trend chart"
+                  >
+                    <defs>
+                      <linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1">
+                        <stop
+                          offset="0%"
+                          stop-color="#b9e6d5"
+                          stop-opacity=".65"
+                        />
+                        <stop
+                          offset="100%"
+                          stop-color="#b9e6d5"
+                          stop-opacity=".05"
+                        />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      class="area"
+                      id="occupancyArea"
+                      d="M0,240 L700,240 Z"
+                    />
+                    <path class="line" id="occupancyLine" d="M0,200 L700,200" />
+                    <circle
+                      id="occupancyPoint"
+                      cx="700"
+                      cy="200"
+                      r="5"
+                      class="chart-point"
+                    />
+                  </svg>
+                  <div class="x-axis">
+                    <span>0%</span><span>25%</span><span>50%</span
+                    ><span>75%</span><span>100%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <span
+                  ><i class="legend-dot mint-bg"></i> Occupied units
+                  <strong id="occupiedLegend">--</strong></span
+                ><span
+                  ><i class="legend-dot gray-bg"></i> Vacant units
+                  <strong id="vacantLegend">--</strong></span
+                ><span class="chart-callout" id="otherUnitsLegend"
+                  >Other: --</span
+                >
+              </div>
+            </section>
+            <section class="panel activity-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Recent records</h2>
+                  <p>Latest unit, tenant, and rent records from the database</p>
+                </div>
+              </div>
+              <div class="activity-list" id="activityList" aria-live="polite">
+                <p class="empty-state">Loading recent records</p>
+              </div>
+            </section>
+          </div>
+
+          <section class="panel users-panel" id="team-access">
+            <div class="panel-heading">
+              <div>
+                <h2>Team access</h2>
+                <p>Manage who can access your apartment system</p>
+              </div>
+              <button
+                class="button button-small button-secondary"
+                id="manageUsers"
+              >
+                <i data-lucide="user-round-plus"></i> Add manager
+              </button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th>Added</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="teamRows">
+                  <tr>
+                    <td colspan="4" class="empty-state">Loading users</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel quick-links">
+            <div class="panel-heading">
+              <div>
+                <h2>Go to a module</h2>
+                <p>Open the tools for your day-to-day apartment operations</p>
+              </div>
+            </div>
+            <div class="tool-grid">
+              <a
+                class="tool-card"
+                href="/Mapesa%20Apartment%20Management%20System/Admin%20Module/units.php"
+              >
+                <span class="tool-icon peach"
+                  ><i data-lucide="building"></i></span
+                ><span
+                  ><strong>Manage units</strong
+                  ><small>View and update apartment units</small></span
+                ><i data-lucide="arrow-up-right"></i>
+              </a>
+              <a
+                class="tool-card"
+                href="/Mapesa%20Apartment%20Management%20System/management%20module/Tenant%20Management%20Module/index.php"
+              >
+                <span class="tool-icon blue"
+                  ><i data-lucide="users"></i></span
+                ><span
+                  ><strong>Manage tenants</strong
+                  ><small>Register tenants and review records</small></span
+                ><i data-lucide="arrow-up-right"></i>
+              </a>
+              <a
+                class="tool-card"
+                href="/Mapesa%20Apartment%20Management%20System/management%20module/Visitor%20%26%20Security%20Module/index.php"
+              >
+                <span class="tool-icon lilac"
+                  ><i data-lucide="shield-check"></i></span
+                ><span
+                  ><strong>Visitor register</strong
+                  ><small>Review visitor and security activity</small></span
+                ><i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="userModal" hidden>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal-heading">
+          <div>
+            <p class="eyebrow">Manager access</p>
+            <h2 id="modalTitle">Create manager account</h2>
+          </div>
+          <button class="icon-button close-modal" aria-label="Close">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <form id="userForm">
+          <label
+            >Full name<input
+              name="name"
+              type="text"
+              placeholder="e.g. Njeri Kamau"
+              required /></label
+          ><label
+            >Work email<input
+              name="email"
+              type="email"
+              placeholder="name@mapesa.com"
+              required /></label
+          ><label
+            >Login password<input
+              name="password"
+              type="password"
+              minlength="6"
+              placeholder="At least 6 characters"
+              required /></label
+          >
+          <p class="form-note">The manager can sign in immediately with this email and password.</p>
+          <div class="form-actions">
+            <button type="button" class="button button-secondary close-modal">
+              Cancel</button
+            ><button class="button button-primary" type="submit">
+              <i data-lucide="user-round-plus"></i> Create manager account
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="toast" id="toast">
+      <i data-lucide="check-circle-2"></i
+      ><span>Report exported successfully.</span>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

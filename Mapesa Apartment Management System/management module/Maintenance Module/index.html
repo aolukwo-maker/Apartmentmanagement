@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maintenance | Mapesa Apartments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../module-navigation.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"
+          ><span class="brand-mark">M</span
+          ><span>mapesa<span class="brand-dot">.</span></span></a
+        >
+        <div class="property-switcher">
+          <span class="switcher-icon">⌂</span
+          ><span><small>PROPERTY</small>Mapesa Apartments</span
+          ><span class="chevron">⌄</span>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <p class="nav-label">Workspace</p>
+          <a href="#" class="nav-item"><span>▦</span>Overview</a>
+          <a href="#" class="nav-item"><span>⌂</span>Tenants</a>
+          <a href="#" class="nav-item active"
+            ><span>⚒</span>Maintenance <b class="nav-count">8</b></a
+          >
+          <a href="#" class="nav-item"><span>◷</span>Payments</a>
+          <a href="#" class="nav-item"><span>▤</span>Reports</a>
+          <p class="nav-label secondary-label">Manage</p>
+          <a href="#" class="nav-item"><span>⚙</span>Settings</a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="support-icon">?</div>
+          <div><strong>Need a hand?</strong><span>Contact support</span></div>
+          <span>›</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs">
+            <span>Workspace</span><b>/</b><strong>Maintenance</strong>
+          </div>
+          <div class="top-actions">
+            <button class="icon-button" aria-label="Notifications">
+              ♧<i></i>
+            </button>
+            <div class="user-avatar" data-manager-initials>M</div>
+            <div class="user-info">
+              <strong data-manager-name>Manager account</strong><span data-manager-role>Manager</span>
+            </div>
+            <span class="chevron">⌄</span>
+          </div>
+        </header>
+        <nav class="module-navigation" aria-label="Management modules">
+          <a class="module-home" href="../index.html">Dashboard</a>
+          <details class="module-switcher">
+            <summary>Workspaces</summary>
+            <div class="module-menu">
+              <a href="../Rent%20%26%20Payment%20Module/index.php">Rent & payments</a>
+              <a href="../Financial%20Management%20Module/index.html">Financial management</a>
+              <a href="index.html" aria-current="page">Maintenance</a>
+              <a href="../Utility%20%20Management%20Module/index.html">Utilities</a>
+              <a href="../Complaints%20%20Feedback%20Module/index.html">Complaints & feedback</a>
+              <a href="../Communication%20%26%20Notification%20Module/index.html">Communication</a>
+              <a href="../Reports%20%26%20Analytics%20Module/index.html">Reports & analytics</a>
+            </div>
+          </details>
+        </nav>
+        <section class="page-heading">
+          <div>
+            <p class="eyebrow">Thursday, 17 September 2026</p>
+            <h1>Maintenance <span>desk</span></h1>
+            <p class="subheading">
+              Keep every repair moving and every tenant heard.
+            </p>
+          </div>
+          <button class="primary-button" id="openReport">
+            <span>＋</span> Report a problem
+          </button>
+        </section>
+
+        <section class="stat-grid" aria-label="Maintenance summary">
+          <article class="stat-card accent-amber">
+            <div class="stat-top">
+              <span class="stat-label">Open requests</span
+              ><span class="stat-icon">◌</span>
+            </div>
+            <strong class="stat-value" id="openCount">8</strong
+            ><span class="stat-note positive"
+              >↑ 12% <em>vs last month</em></span
+            >
+          </article>
+          <article class="stat-card accent-blue">
+            <div class="stat-top">
+              <span class="stat-label">In progress</span
+              ><span class="stat-icon">↻</span>
+            </div>
+            <strong class="stat-value" id="progressCount">3</strong
+            ><span class="stat-note"
+              ><span class="status-dot blue"></span> On track this week</span
+            >
+          </article>
+          <article class="stat-card accent-green">
+            <div class="stat-top">
+              <span class="stat-label">Completed this month</span
+              ><span class="stat-icon">✓</span>
+            </div>
+            <strong class="stat-value" id="completedCount">14</strong
+            ><span class="stat-note positive">↑ 8% <em>vs last month</em></span>
+          </article>
+          <article class="stat-card accent-coral">
+            <div class="stat-top">
+              <span class="stat-label">Total cost this month</span
+              ><span class="stat-icon">♧</span>
+            </div>
+            <strong class="stat-value currency" id="costTotal"
+              >KES 42,850</strong
+            ><span class="stat-note"
+              ><span class="status-dot coral"></span> Across 14 jobs</span
+            >
+          </article>
+        </section>
+
+        <section class="workflow-section">
+          <div class="section-heading">
+            <div>
+              <h2>Work order flow</h2>
+              <p>Requests by current stage</p>
+            </div>
+            <button class="text-button" id="viewHistory">
+              View history <span>→</span>
+            </button>
+          </div>
+          <div class="workflow-track">
+            <div class="flow-step">
+              <div class="flow-marker reported">1</div>
+              <div>
+                <strong>Reported</strong
+                ><span id="reportedFlow">5 requests</span>
+              </div>
+            </div>
+            <div class="flow-line"></div>
+            <div class="flow-step">
+              <div class="flow-marker assigned">2</div>
+              <div>
+                <strong>Assigned</strong
+                ><span id="assignedFlow">2 requests</span>
+              </div>
+            </div>
+            <div class="flow-line"></div>
+            <div class="flow-step">
+              <div class="flow-marker progress">3</div>
+              <div>
+                <strong>In progress</strong
+                ><span id="progressFlow">3 requests</span>
+              </div>
+            </div>
+            <div class="flow-line"></div>
+            <div class="flow-step">
+              <div class="flow-marker completed">4</div>
+              <div>
+                <strong>Completed</strong
+                ><span id="completedFlow">14 this month</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="requests-section" id="requests">
+          <div class="section-heading requests-heading">
+            <div>
+              <h2>Maintenance requests</h2>
+              <p>
+                <span id="requestCount">8 active requests</span> · Updated just
+                now
+              </p>
+            </div>
+            <div class="view-controls">
+              <button class="filter-button" id="filterButton">
+                ☷ <span>Filter</span><b id="filterBadge">0</b></button
+              ><button class="view-button active">▤</button
+              ><button class="view-button">☷</button>
+            </div>
+          </div>
+          <div class="filter-panel" id="filterPanel">
+            <select id="statusFilter">
+              <option value="all">All statuses</option>
+              <option value="Reported">Reported</option>
+              <option value="Assigned">Assigned</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option></select
+            ><select id="priorityFilter">
+              <option value="all">All priorities</option>
+              <option value="High">High priority</option>
+              <option value="Medium">Medium priority</option>
+              <option value="Low">Low priority</option></select
+            ><button id="clearFilters">Clear</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>REQUEST</th>
+                  <th>TENANT / UNIT</th>
+                  <th>PRIORITY</th>
+                  <th>ASSIGNEE</th>
+                  <th>STATUS</th>
+                  <th>COST</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="requestRows"></tbody>
+            </table>
+            <div class="empty-state" id="emptyState">
+              No requests match these filters.
+            </div>
+          </div>
+        </section>
+        <footer class="page-footer">
+          <span
+            >Showing <strong id="showingCount">8</strong> active requests</span
+          >
+          <div class="pagination">
+            <button disabled>←</button><button class="current">1</button
+            ><button>2</button><button>→</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="reportModal" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button class="modal-close" id="closeReport" aria-label="Close">
+          ×
+        </button>
+        <div class="modal-kicker">NEW WORK ORDER</div>
+        <h2 id="modalTitle">Report a problem</h2>
+        <p class="modal-copy">
+          Tell us what needs attention. We’ll get the right person on it.
+        </p>
+        <form id="reportForm">
+          <label
+            >Issue title<input
+              name="title"
+              required
+              placeholder="e.g. Kitchen sink is leaking"
+          /></label>
+          <div class="form-row">
+            <label
+              >Unit / location<input
+                name="unit"
+                required
+                placeholder="e.g. A-204" /></label
+            ><label
+              >Priority<select name="priority">
+                <option>Medium</option>
+                <option>High</option>
+                <option>Low</option>
+              </select></label
+            >
+          </div>
+          <label
+            >Description<textarea
+              name="description"
+              required
+              placeholder="Add useful details about the problem..."
+            ></textarea></label
+          ><label class="upload-zone" for="photoUpload"
+            ><span class="upload-symbol">⌁</span
+            ><span
+              ><strong>Attach photos</strong
+              ><small>JPG or PNG, up to 5 MB</small></span
+            ><input
+              id="photoUpload"
+              type="file"
+              accept="image/png,image/jpeg"
+              multiple
+          /></label>
+          <div class="photo-preview" id="photoPreview"></div>
+          <div class="modal-actions">
+            <button type="button" class="secondary-button" id="cancelReport">
+              Cancel</button
+            ><button type="submit" class="primary-button">
+              Submit report <span>→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="toast" id="toast">
+      <span>✓</span>
+      <div>
+        <strong>Report submitted</strong
+        ><small>Your maintenance request is now in the queue.</small>
+      </div>
+    </div>
+    <script src="../management-live.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

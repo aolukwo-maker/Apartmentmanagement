@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mapesa Connect | Communication Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../module-navigation.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#">
+          <span class="brand-mark">M</span>
+          <span>mapesa<span class="brand-dot">.</span></span>
+        </a>
+        <div class="property-switcher">
+          <span class="eyebrow">PROPERTY</span>
+          <button class="property-button" type="button">
+            <span>Riverside Heights</span><span>⌄</span>
+          </button>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <span class="nav-label">Workspace</span>
+          <a class="nav-item" href="#"
+            ><span class="nav-icon">▦</span>Overview</a
+          >
+          <a class="nav-item active" href="#"
+            ><span class="nav-icon">◈</span>Communication
+            <span class="nav-count">4</span></a
+          >
+          <a class="nav-item" href="#"
+            ><span class="nav-icon">⌂</span>Residents</a
+          >
+          <a class="nav-item" href="#"
+            ><span class="nav-icon">▤</span>Maintenance</a
+          >
+          <span class="nav-label nav-label-spaced">Manage</span>
+          <a class="nav-item" href="#"
+            ><span class="nav-icon">◷</span>Payment records</a
+          >
+          <a class="nav-item" href="#"
+            ><span class="nav-icon">⚙</span>Settings</a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <span class="help-icon">?</span>
+            <div>
+              <strong>Need a hand?</strong><span>Visit the help centre</span>
+            </div>
+            <span class="arrow">↗</span>
+          </div>
+          <div class="user-profile">
+            <span class="avatar avatar-plum" data-manager-initials>M</span>
+            <div>
+              <strong data-manager-name>Manager account</strong><span data-manager-role>Manager</span>
+            </div>
+            <span class="more">•••</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs">
+            <span>Riverside Heights</span><b>/</b><strong>Communication</strong>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" aria-label="Search">⌕</button
+            ><button
+              class="icon-button notification-button"
+              aria-label="Notifications"
+            >
+              ♢<i></i></button
+            ><span class="top-avatar avatar avatar-plum">AM</span>
+          </div>
+        </header>
+
+        <nav class="module-navigation" aria-label="Management modules">
+          <a class="module-home" href="../index.html">Dashboard</a>
+          <details class="module-switcher">
+            <summary>Workspaces</summary>
+            <div class="module-menu">
+              <a href="../Rent%20%26%20Payment%20Module/index.php">Rent & payments</a>
+              <a href="../Financial%20Management%20Module/index.html">Financial management</a>
+              <a href="../Maintenance%20Module/index.html">Maintenance</a>
+              <a href="../Utility%20%20Management%20Module/index.html">Utilities</a>
+              <a href="../Complaints%20%20Feedback%20Module/index.html">Complaints & feedback</a>
+              <a href="index.html" aria-current="page">Communication</a>
+              <a href="../Reports%20%26%20Analytics%20Module/index.html">Reports & analytics</a>
+            </div>
+          </details>
+        </nav>
+
+        <div class="page-wrap">
+          <section class="page-heading">
+            <div>
+              <span class="eyebrow coral">COMMUNICATION DESK</span>
+              <h1>Stay in the loop.</h1>
+              <p>
+                Reach every resident with the right message, on the right
+                channel.
+              </p>
+            </div>
+            <button class="primary-button" id="composeTop" type="button">
+              <span>＋</span> New message
+            </button>
+          </section>
+
+          <section class="metric-grid" aria-label="Communication summary">
+            <article class="metric-card">
+              <div class="metric-top">
+                <span class="metric-icon teal">◉</span
+                ><span class="trend positive">↑ 12.4%</span>
+              </div>
+              <strong>98.6%</strong><span>Delivery rate</span>
+              <div class="sparkline teal-line">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top">
+                <span class="metric-icon amber">◷</span
+                ><span class="trend neutral">This month</span>
+              </div>
+              <strong>1,284</strong><span>Messages sent</span>
+              <div class="sparkline amber-line">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top">
+                <span class="metric-icon plum">⌁</span
+                ><span class="trend positive">↑ 8.1%</span>
+              </div>
+              <strong>72.8%</strong><span>Average open rate</span>
+              <div class="sparkline plum-line">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </article>
+            <article class="metric-card priority-card">
+              <div>
+                <span class="eyebrow">NEEDS ATTENTION</span><strong>3</strong
+                ><span>scheduled messages</span>
+              </div>
+              <button class="text-button" id="viewScheduled" type="button">
+                View schedule <span>→</span>
+              </button>
+            </article>
+          </section>
+
+          <section class="content-grid">
+            <div class="panel activity-panel">
+              <div class="panel-header">
+                <div>
+                  <h2>Recent activity</h2>
+                  <p>Latest messages across your property</p>
+                </div>
+                <button class="filter-button" id="filterButton" type="button">
+                  All types <span>⌄</span>
+                </button>
+              </div>
+              <div class="activity-list" id="activityList">
+                <article class="activity-row" data-type="Maintenance">
+                  <span class="activity-icon maintenance">⌂</span>
+                  <div class="activity-detail">
+                    <div>
+                      <strong>Water supply interruption</strong
+                      ><span class="status sent">Sent</span>
+                    </div>
+                    <p>Maintenance notification · All residents</p>
+                    <span class="activity-time">Today, 09:42 AM</span>
+                  </div>
+                  <span class="channel-tag">SMS + in-app</span>
+                </article>
+                <article class="activity-row" data-type="Payment">
+                  <span class="activity-icon payment">✓</span>
+                  <div class="activity-detail">
+                    <div>
+                      <strong>Rent payment received</strong
+                      ><span class="status delivered">Delivered</span>
+                    </div>
+                    <p>Payment confirmation · Unit B-204</p>
+                    <span class="activity-time">Today, 08:16 AM</span>
+                  </div>
+                  <span class="channel-tag">Email</span>
+                </article>
+                <article class="activity-row" data-type="Reminder">
+                  <span class="activity-icon reminder">◷</span>
+                  <div class="activity-detail">
+                    <div>
+                      <strong>September rent reminder</strong
+                      ><span class="status scheduled">Scheduled</span>
+                    </div>
+                    <p>Rent reminder · 86 residents</p>
+                    <span class="activity-time">Tomorrow, 08:00 AM</span>
+                  </div>
+                  <span class="channel-tag">SMS + email</span>
+                </article>
+                <article class="activity-row" data-type="Announcement">
+                  <span class="activity-icon announcement">✦</span>
+                  <div class="activity-detail">
+                    <div>
+                      <strong>Residents' committee meeting</strong
+                      ><span class="status delivered">Delivered</span>
+                    </div>
+                    <p>Announcement · 42 residents</p>
+                    <span class="activity-time">Yesterday, 04:30 PM</span>
+                  </div>
+                  <span class="channel-tag">In-app</span>
+                </article>
+                <article class="activity-row" data-type="Emergency">
+                  <span class="activity-icon emergency">!</span>
+                  <div class="activity-detail">
+                    <div>
+                      <strong>Security gate update</strong
+                      ><span class="status delivered">Delivered</span>
+                    </div>
+                    <p>Emergency announcement · All residents</p>
+                    <span class="activity-time">Sep 14, 11:05 AM</span>
+                  </div>
+                  <span class="channel-tag">SMS + in-app</span>
+                </article>
+              </div>
+              <button class="load-more" type="button">
+                View all activity <span>→</span>
+              </button>
+            </div>
+
+            <div class="side-stack">
+              <div class="panel quick-panel">
+                <div class="panel-header">
+                  <div>
+                    <h2>Quick send</h2>
+                    <p>Start with a message type</p>
+                  </div>
+                  <span class="status-dot"></span>
+                </div>
+                <div class="quick-actions">
+                  <button
+                    class="quick-action coral-action"
+                    data-template="Announcement"
+                  >
+                    <span>✦</span><strong>Announcement</strong
+                    ><small>Share news with residents</small><b>→</b></button
+                  ><button
+                    class="quick-action amber-action"
+                    data-template="Reminder"
+                  >
+                    <span>◷</span><strong>Rent reminder</strong
+                    ><small>Keep payments on track</small><b>→</b></button
+                  ><button
+                    class="quick-action teal-action"
+                    data-template="Maintenance"
+                  >
+                    <span>⌂</span><strong>Maintenance update</strong
+                    ><small>Keep everyone informed</small><b>→</b></button
+                  ><button
+                    class="quick-action plum-action"
+                    data-template="Emergency"
+                  >
+                    <span>!</span><strong>Emergency alert</strong
+                    ><small>Reach everyone, instantly</small><b>→</b>
+                  </button>
+                </div>
+              </div>
+              <div class="panel delivery-panel">
+                <div class="panel-header">
+                  <div>
+                    <h2>Channel health</h2>
+                    <p>Last 30 days</p>
+                  </div>
+                  <button class="more-button" type="button">•••</button>
+                </div>
+                <div class="channel-row">
+                  <span class="channel-symbol sms">S</span>
+                  <div><strong>SMS</strong><small>98.9% delivered</small></div>
+                  <div class="health-bar"><i style="width: 98.9%"></i></div>
+                </div>
+                <div class="channel-row">
+                  <span class="channel-symbol email">✉</span>
+                  <div>
+                    <strong>Email</strong><small>99.6% delivered</small>
+                  </div>
+                  <div class="health-bar"><i style="width: 99.6%"></i></div>
+                </div>
+                <div class="channel-row">
+                  <span class="channel-symbol app">◈</span>
+                  <div>
+                    <strong>In-system</strong><small>100% delivered</small>
+                  </div>
+                  <div class="health-bar"><i style="width: 100%"></i></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="composeModal" hidden>
+      <section
+        class="compose-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="composeTitle"
+      >
+        <div class="modal-header">
+          <div>
+            <span class="eyebrow coral">NEW COMMUNICATION</span>
+            <h2 id="composeTitle">Compose a message</h2>
+          </div>
+          <button class="close-button" id="closeModal" aria-label="Close">
+            ×
+          </button>
+        </div>
+        <form id="messageForm">
+          <label
+            >Message type<select id="messageType">
+              <option>Announcement</option>
+              <option>Reminder</option>
+              <option>Payment</option>
+              <option>Maintenance</option>
+              <option>Emergency</option>
+            </select></label
+          ><label
+            >Recipients<select>
+              <option>All residents · 128 households</option>
+              <option>Residents with outstanding rent · 14 households</option>
+              <option>Select a building or unit...</option>
+            </select></label
+          ><label
+            >Message title<input
+              id="messageTitle"
+              required
+              value="Residents' committee meeting" /></label
+          ><label
+            >Message body<textarea id="messageBody" required rows="4">
+Join us for the monthly residents' committee meeting this Thursday at 6:30 PM in the common room.</textarea
+            >
+          </label>
+          <fieldset>
+            <legend>Send via</legend>
+            <div class="channel-options">
+              <label><input type="checkbox" checked /> <span>SMS</span></label
+              ><label
+                ><input type="checkbox" checked /> <span>Email</span></label
+              ><label
+                ><input type="checkbox" checked /> <span>In-system</span></label
+              >
+            </div>
+          </fieldset>
+          <div class="form-footer">
+            <button class="secondary-button" type="button" id="scheduleButton">
+              Schedule</button
+            ><button class="primary-button" type="submit">
+              Send message <span>→</span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status">
+      <span>✓</span>
+      <div>
+        <strong>Message sent</strong
+        ><small>Your communication is on its way.</small>
+      </div>
+    </div>
+    <script src="../management-live.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

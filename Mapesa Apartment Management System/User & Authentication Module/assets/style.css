@@ -1,0 +1,1688 @@
+:root {
+  --primary: #0d6efd;
+  --primary-dark: #0a4bbd;
+  --danger: #dc3545;
+  --success: #198754;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --muted: #6c757d;
+  --border: #dee2e6;
+  --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #edf4ff 0%, #f6f8fb 100%);
+  color: var(--dark);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.topbar a,
+.auth-links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 28px;
+}
+
+.auth-card {
+  max-width: 520px;
+  margin: 60px auto;
+}
+
+.dashboard-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tenant-dashboard {
+  max-width: 1180px;
+  padding: 30px;
+}
+
+.tenant-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tenant-heading h1 {
+  margin-bottom: 8px;
+}
+
+.tenant-heading p:last-child {
+  color: var(--muted);
+  margin: 0;
+}
+
+.tenant-eyebrow {
+  color: var(--primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.tenant-profile-link {
+  flex: 0 0 auto;
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tenant-contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 14px 0 4px;
+}
+
+.rent-balance-panel {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid #cfe2d9;
+  border-radius: 12px;
+  background: #f7fbf8;
+}
+
+.rent-balance-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.rent-balance-heading h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.rent-balance-heading .tenant-eyebrow {
+  margin-bottom: 6px;
+}
+
+.balance-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #176b45;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.balance-live-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #198754;
+}
+
+.balance-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.balance-summary {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.balance-summary span,
+.balance-summary strong {
+  display: block;
+}
+
+.balance-summary span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.balance-summary strong {
+  margin-top: 8px;
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.balance-outstanding strong {
+  color: #176b45;
+}
+
+.balance-updated {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.rent-charge-list {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.rent-charge-row {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.rent-charge-row > span:nth-child(2) {
+  color: var(--muted);
+}
+
+.rent-charge-status {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #e9ecef;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.rent-charge-status.paid {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.rent-charge-status.overdue {
+  background: #f8d7da;
+  color: #842029;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(13, 110, 253, 0.15);
+  border-color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: var(--primary);
+  color: white;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: #6c757d;
+}
+
+.btn-secondary:hover {
+  background: #565e64;
+}
+
+.btn-danger {
+  background: var(--danger);
+}
+
+.btn-danger:hover {
+  background: #b02a37;
+}
+
+.auth-links {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.alert {
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.alert.error {
+  background: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+.alert.success {
+  background: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 25px 0;
+}
+
+.mini-box,
+.section-box {
+  background: #f8f9fa;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.tenant-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.request-panel h2,
+.request-history h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.form-hint {
+  color: var(--muted);
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+.request-panel textarea {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  resize: vertical;
+}
+
+.emergency-panel {
+  border-color: #f1b0b7;
+  background: #fff8f8;
+}
+
+.request-history {
+  margin-top: 20px;
+}
+
+.request-entry {
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.request-entry-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.request-entry p {
+  margin: 8px 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.request-entry small {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.request-badge {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #e9ecef;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.profile-item {
+  background: #f8f9fa;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.inline-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.inline-form > * {
+  flex: 1 1 200px;
+}
+
+@media (max-width: 600px) {
+  .tenant-dashboard {
+    padding: 20px 16px;
+  }
+
+  .tenant-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tenant-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rent-charge-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .rent-charge-row > span:nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .tenant-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body:has(.tenant-app-shell) {
+  min-height: 100vh;
+  background: #f2f5f9;
+  color: #17283f;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.tenant-app-shell {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.tenant-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  padding: 25px 16px 18px;
+  background: #14263e;
+  color: #f7f9fc;
+}
+
+.tenant-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 2px 9px 28px;
+  color: #fff;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tenant-brand-mark {
+  display: grid;
+  width: 38px;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 10px;
+  background: #e8eef6;
+  color: #14263e;
+  font-size: 1.15rem;
+}
+
+.tenant-brand small,
+.sidebar-resident small {
+  display: block;
+  margin-top: 3px;
+  color: #aebbd0;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+
+.sidebar-label {
+  margin: 0 10px 9px;
+  color: #9eacc1;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.tenant-nav {
+  display: grid;
+  gap: 4px;
+}
+
+.tenant-nav-link {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #d5deea;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.tenant-nav-link svg,
+.topbar-profile svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  stroke-width: 1.8;
+}
+
+.tenant-nav-link:hover,
+.tenant-nav-link.active {
+  background: #263c58;
+  color: #fff;
+}
+
+.tenant-nav-link.active {
+  box-shadow: inset 3px 0 #9cb3d1;
+}
+
+.tenant-logout {
+  margin-top: auto;
+  color: #e1e7ef;
+}
+
+.sidebar-resident {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 15px 8px 2px;
+  border-top: 1px solid #334760;
+  font-size: 0.8rem;
+}
+
+.resident-avatar {
+  display: grid;
+  width: 34px;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #dce5f0;
+  color: #1b304a;
+  font-weight: 800;
+}
+
+.sidebar-resident strong {
+  display: block;
+  overflow: hidden;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tenant-main {
+  min-width: 0;
+}
+
+.tenant-topbar {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  min-height: 64px;
+  margin: 0;
+  padding: 12px clamp(18px, 4vw, 42px);
+  border: 0;
+  border-bottom: 1px solid #e1e6ed;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+}
+
+.topbar-context {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #7a8798;
+  font-size: 0.86rem;
+}
+
+.topbar-context strong {
+  color: #20334d;
+}
+
+.topbar-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #233953;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tenant-dashboard {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 32px clamp(18px, 4vw, 44px) 48px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tenant-dashboard h1,
+.tenant-dashboard h2,
+.tenant-dashboard h3 {
+  color: #17283f;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+.tenant-heading {
+  align-items: center;
+  padding-bottom: 20px;
+  border: 0;
+}
+
+.tenant-heading h1 {
+  margin-bottom: 6px;
+  font-size: clamp(1.55rem, 2vw, 2rem);
+}
+
+.tenant-heading > div > p:last-child {
+  color: #68778b;
+}
+
+.tenant-eyebrow {
+  color: #566d8b;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.tenant-profile-link,
+.section-title-row > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #ccd5e0;
+  border-radius: 7px;
+  background: #fff;
+  color: #243b59;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tenant-contact-line {
+  padding: 0 0 4px;
+  color: #728095;
+}
+
+.rent-balance-panel,
+.tenant-house-panel,
+.request-history,
+.notification-panel {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid #e1e6ed;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(25, 42, 64, 0.04);
+}
+
+.rent-balance-panel {
+  border-color: #dfe5ed;
+  background: #fff;
+}
+
+.rent-balance-heading h2,
+.section-title-row h2,
+.notification-panel h2 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.balance-live-indicator {
+  color: #536983;
+  font-size: 0.78rem;
+}
+
+.balance-live-indicator span {
+  background: #2e8a63;
+  box-shadow: 0 0 0 3px #e2f1e9;
+}
+
+.balance-summary-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.balance-summary {
+  min-height: 132px;
+  padding: 14px 15px;
+  border-color: #e4e8ee;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.balance-summary > span:nth-child(2) {
+  margin-top: 12px;
+  color: #6c798b;
+  font-size: 0.79rem;
+}
+
+.balance-icon,
+.house-detail-icon,
+.notification-icon {
+  display: grid;
+  width: 31px;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 8px;
+  background: #edf2f7;
+  color: #314a69;
+}
+
+.balance-icon svg,
+.house-detail-icon svg,
+.notification-icon svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.8;
+}
+
+.balance-summary strong {
+  margin-top: 8px;
+  color: #17283f;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 1.15rem;
+}
+
+.balance-outstanding strong {
+  color: #bd681e;
+}
+
+.payment-status-value {
+  display: inline-block !important;
+  width: fit-content;
+  margin-top: 11px !important;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #edf2f7;
+  color: #334a67 !important;
+  font-family: "DM Sans", "Segoe UI", sans-serif !important;
+  font-size: 0.76rem !important;
+}
+
+.payment-status-value.paid {
+  background: #e4f2e9;
+  color: #236843 !important;
+}
+
+.payment-status-value.overdue {
+  background: #f9e7e7;
+  color: #a43c3c !important;
+}
+
+.payment-status-value.due,
+.payment-status-value.partial,
+.payment-status-value.unpaid,
+.rent-charge-status.due,
+.rent-charge-status.partial,
+.rent-charge-status.unpaid {
+  background: #fff0df;
+  color: #9c581b;
+}
+
+.balance-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 13px;
+  color: #728095;
+  font-size: 0.78rem;
+}
+
+.balance-secondary strong {
+  margin-left: 5px;
+  color: #344860;
+  font-weight: 700;
+}
+
+.balance-updated {
+  margin-top: 8px;
+  font-size: 0.75rem;
+}
+
+.rent-transactions {
+  margin-top: 20px;
+}
+
+.subsection-heading {
+  padding: 15px 0 9px;
+  border-top: 1px solid #e5e9ef;
+}
+
+.subsection-heading h3 {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.subsection-heading p {
+  margin: 5px 0 0;
+  color: #778497;
+  font-size: 0.78rem;
+}
+
+.rent-charge-list {
+  margin-top: 7px;
+  border-top: 1px solid #e8ecf1;
+}
+
+.rent-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  scrollbar-color: #aab6c5 #f1f4f7;
+}
+
+.rent-transactions-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.rent-transactions-table th,
+.rent-transactions-table td {
+  padding: 12px 13px;
+  border-bottom: 1px solid #edf0f4;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.rent-transactions-table thead th {
+  background: #f6f8fa;
+  color: #6f7d90;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.rent-transactions-table tbody th {
+  color: #263a53;
+  font-weight: 700;
+}
+
+.rent-transactions-table tbody td {
+  color: #526277;
+}
+
+.rent-transactions-table tbody tr:last-child th,
+.rent-transactions-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.rent-transactions-table .rent-table-message {
+  padding: 18px 13px;
+  color: #778497;
+  text-align: center;
+  white-space: normal;
+}
+
+.rent-charge-status {
+  padding: 5px 9px;
+  background: #edf2f7;
+  color: #465a73;
+  font-size: 0.72rem;
+}
+
+.rent-charge-status.paid {
+  background: #e4f2e9;
+  color: #236843;
+}
+
+.rent-charge-status.overdue {
+  background: #f9e7e7;
+  color: #a43c3c;
+}
+
+.tenant-house-panel {
+  margin-top: 18px;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 15px;
+}
+
+.section-title-row .tenant-eyebrow {
+  margin-bottom: 5px;
+}
+
+.house-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.house-detail {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid #e6eaf0;
+  border-radius: 8px;
+  background: #fbfcfd;
+}
+
+.house-detail > span:last-child {
+  min-width: 0;
+}
+
+.house-detail small,
+.house-detail strong {
+  display: block;
+}
+
+.house-detail small {
+  margin: 1px 0 5px;
+  color: #7b8798;
+  font-size: 0.72rem;
+}
+
+.house-detail strong {
+  overflow-wrap: anywhere;
+  color: #263a53;
+  font-size: 0.81rem;
+}
+
+.tenant-support-section {
+  margin-top: 28px;
+  scroll-margin-top: 82px;
+}
+
+.tenant-support-section > .section-title-row {
+  margin-bottom: 13px;
+}
+
+.tenant-actions {
+  margin-top: 0;
+}
+
+.request-panel,
+.tenant-dashboard .request-history {
+  border-color: #e1e6ed;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.request-panel h2,
+.request-history h2 {
+  color: #20334d;
+  font-size: 1rem;
+}
+
+.request-panel .form-hint {
+  color: #778497;
+  font-size: 0.82rem;
+}
+
+.emergency-panel {
+  border-color: #e9d5d5;
+  background: #fffdfd;
+}
+
+.tenant-dashboard input,
+.tenant-dashboard select,
+.tenant-dashboard textarea {
+  border-color: #d7dee7;
+  border-radius: 7px;
+  background-color: #fff;
+  color: #1f3149;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.tenant-dashboard input:focus,
+.tenant-dashboard select:focus,
+.tenant-dashboard textarea:focus {
+  outline: 3px solid rgba(49, 74, 105, 0.13);
+  border-color: #526b8a;
+}
+
+.tenant-dashboard .btn {
+  min-height: 43px;
+  border-radius: 7px;
+  background: #c87527;
+  font-size: 0.88rem;
+}
+
+.tenant-dashboard .btn:hover {
+  background: #a85f1e;
+}
+
+.tenant-dashboard .btn-danger {
+  background: #8f3f48;
+}
+
+.tenant-dashboard .btn-danger:hover {
+  background: #76313a;
+}
+
+.request-history {
+  scroll-margin-top: 82px;
+}
+
+.section-count {
+  color: #778497;
+  font-size: 0.76rem;
+}
+
+.request-entry {
+  border-color: #e7ebf0;
+}
+
+.request-entry-heading strong {
+  color: #243953;
+}
+
+.request-badge {
+  border-radius: 6px;
+  background: #edf2f7;
+  color: #465b75;
+}
+
+.notification-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  scroll-margin-top: 82px;
+  background: #f9fbfd;
+}
+
+.notification-icon {
+  flex: 0 0 auto;
+  background: #e8eef5;
+}
+
+.notification-panel h2 {
+  margin-bottom: 6px;
+}
+
+.notification-panel p:last-child {
+  margin: 0;
+  color: #68788e;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.tenant-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid #d9e0e9;
+  border-radius: 7px;
+  background: #fff;
+  color: #243b59;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tenant-menu-toggle svg {
+  width: 17px;
+  height: 17px;
+}
+
+.topbar-notification {
+  position: relative;
+  display: grid;
+  width: 38px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #e1e6ed;
+  border-radius: 8px;
+  color: #314a69;
+}
+
+.topbar-notification svg {
+  width: 18px;
+  height: 18px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #dc8a36;
+}
+
+.topbar-profile-name {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topbar-profile-icon {
+  display: grid;
+  width: 34px;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8edf4;
+}
+
+.topbar-profile-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.tenant-dashboard a:focus-visible,
+.tenant-dashboard button:focus-visible,
+.tenant-sidebar a:focus-visible,
+.tenant-topbar a:focus-visible,
+.tenant-menu-toggle:focus-visible {
+  outline: 3px solid #e3a45f;
+  outline-offset: 3px;
+}
+
+.tenant-nav-link,
+.tenant-dashboard .btn,
+.topbar-notification,
+.topbar-profile-icon {
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.section-box.request-panel {
+  min-width: 0;
+}
+
+.tenant-dashboard [id] {
+  scroll-margin-top: 84px;
+}
+
+@media (max-width: 1100px) {
+  .tenant-app-shell {
+    grid-template-columns: 218px minmax(0, 1fr);
+  }
+
+  .balance-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .house-details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .tenant-app-shell {
+    display: block;
+  }
+
+  .tenant-sidebar {
+    position: static;
+    height: auto;
+    padding: 12px 14px 10px;
+  }
+
+  .tenant-brand {
+    padding: 0 4px 12px;
+  }
+
+  .tenant-brand-mark {
+    width: 34px;
+  }
+
+  .sidebar-label,
+  .sidebar-resident {
+    display: none;
+  }
+
+  .tenant-nav {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+    padding-top: 10px;
+  }
+
+  .tenant-app-shell.tenant-menu-open .tenant-nav {
+    display: grid;
+  }
+
+  .tenant-app-shell.tenant-menu-open .tenant-logout {
+    display: flex;
+    margin-top: 5px;
+    border-top: 1px solid #334760;
+    border-radius: 0;
+  }
+
+  .tenant-nav-link {
+    min-height: 42px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 9px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .tenant-nav-link svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .tenant-nav-link.active {
+    box-shadow: inset 3px 0 #e6a35c;
+  }
+
+  .tenant-topbar {
+    position: static;
+    min-height: 52px;
+    padding: 10px 16px;
+  }
+
+  .tenant-menu-toggle {
+    display: inline-flex;
+  }
+
+  .topbar-context {
+    font-size: 0.76rem;
+  }
+
+  .topbar-profile-name {
+    max-width: 125px;
+    font-size: 0.76rem;
+  }
+
+  .tenant-dashboard {
+    padding: 22px 14px 32px;
+  }
+
+  .tenant-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tenant-heading h1 {
+    font-size: 1.45rem;
+  }
+
+  .tenant-heading .tenant-profile-link {
+    display: none;
+  }
+
+  .rent-balance-panel,
+  .tenant-house-panel,
+  .request-history,
+  .notification-panel {
+    padding: 16px;
+  }
+
+  .tenant-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .tenant-nav-link {
+    font-size: 0.73rem;
+  }
+
+  .topbar-context {
+    display: none;
+  }
+
+  .topbar-profile-name {
+    display: none;
+  }
+
+  .balance-summary-grid,
+  .house-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-summary {
+    min-height: 0;
+  }
+
+  .request-entry-heading {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.login-page {
+  min-height: 100vh;
+  background: #f1f4f8;
+  color: #17283f;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.login-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.92fr) minmax(390px, 1.08fr);
+  width: min(100% - 48px, 1060px);
+  min-height: min(700px, calc(100vh - 64px));
+  margin: 32px auto;
+  overflow: hidden;
+  border: 1px solid #e0e5ec;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 20px 55px rgba(24, 40, 61, 0.12);
+}
+
+.login-brand-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 34px clamp(26px, 4vw, 48px) 30px;
+  background: #14263e;
+  color: #fff;
+}
+
+.login-brand {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.login-brand-mark {
+  display: grid;
+  width: 42px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  background: #e8eef6;
+  color: #14263e;
+  font-size: 1.25rem;
+}
+
+.login-brand-name small {
+  display: block;
+  margin-top: 3px;
+  color: #bac7d7;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-size: 0.61rem;
+  font-weight: 600;
+}
+
+.login-brand-copy {
+  max-width: 370px;
+  padding: 45px 0;
+}
+
+.login-kicker,
+.login-eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.login-kicker {
+  color: #bdcadd;
+}
+
+.login-brand-copy h2 {
+  margin: 0;
+  color: #fff;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.login-brand-copy > p:last-child {
+  max-width: 330px;
+  margin: 18px 0 0;
+  color: #cfdae7;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.login-brand-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #b5c2d2;
+  font-size: 0.78rem;
+}
+
+.brand-rule {
+  width: 26px;
+  height: 1px;
+  background: #9eafc5;
+}
+
+.login-form-panel {
+  display: grid;
+  min-width: 0;
+  place-items: center;
+  padding: 46px clamp(26px, 5vw, 66px);
+  background: #fff;
+}
+
+.login-form-wrap {
+  width: min(100%, 390px);
+}
+
+.login-eyebrow {
+  margin-bottom: 10px;
+  color: #6b7e97;
+}
+
+.login-form-wrap h1 {
+  margin: 0;
+  color: #17283f;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.login-intro {
+  margin: 9px 0 29px;
+  color: #728095;
+  font-size: 0.93rem;
+}
+
+.login-form .form-group {
+  margin-bottom: 19px;
+}
+
+.login-form label {
+  margin-bottom: 8px;
+  color: #2b3c52;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.login-form input {
+  min-height: 48px;
+  border-color: #d5dde7;
+  border-radius: 7px;
+  background: #fff;
+  color: #1d2e44;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+.login-form input::placeholder {
+  color: #a0aaba;
+}
+
+.login-form input:focus {
+  outline: 3px solid rgba(50, 76, 108, 0.12);
+  border-color: #526b8a;
+}
+
+.login-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: -3px 0 20px;
+}
+
+.login-forgot-row a,
+.login-register a {
+  color: #294665;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-forgot-row a:hover,
+.login-register a:hover {
+  text-decoration: underline;
+}
+
+.login-submit {
+  display: flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 7px;
+  background: #1d3553;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-size: 0.93rem;
+}
+
+.login-submit:hover {
+  background: #294766;
+}
+
+.login-submit span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.login-register {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 24px;
+  color: #748196;
+  font-size: 0.83rem;
+}
+
+.login-secure-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 32px 0 0;
+  color: #8793a2;
+  font-size: 0.74rem;
+}
+
+.login-secure-note span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #428568;
+}
+
+.login-form-wrap .alert {
+  font-size: 0.84rem;
+}
+
+@media (max-width: 720px) {
+  .login-layout {
+    grid-template-columns: 1fr;
+    width: min(100% - 28px, 500px);
+    min-height: 0;
+    margin: 14px auto;
+  }
+
+  .login-brand-panel {
+    min-height: 220px;
+    padding: 22px 24px 20px;
+  }
+
+  .login-brand-mark {
+    width: 36px;
+  }
+
+  .login-brand-copy {
+    padding: 28px 0 16px;
+  }
+
+  .login-brand-copy h2 {
+    font-size: 1.85rem;
+  }
+
+  .login-brand-copy > p:last-child {
+    margin-top: 10px;
+    font-size: 0.85rem;
+  }
+
+  .login-brand-footer {
+    display: none;
+  }
+
+  .login-form-panel {
+    padding: 34px 24px 30px;
+  }
+}
+
+@media (max-width: 380px) {
+  .login-layout {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .login-brand-panel {
+    min-height: 198px;
+  }
+
+  .login-form-panel {
+    padding-inline: 20px;
+  }
+}

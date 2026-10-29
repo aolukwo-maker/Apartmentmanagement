@@ -1,0 +1,17 @@
+{
+    "units": [
+        {
+            "id": 1,
+            "unit_number": "A-101",
+            "building_name": "Mapesa Tower",
+            "bedrooms": 2,
+            "bathrooms": 1,
+            "status": "occupied",
+            "monthly_rent": 25000,
+            "tenant_name": "Jane Wanjiku",
+            "notes": "Corner unit",
+            "created_at": "2026-10-22 11:42:07",
+            "updated_at": "2026-10-22 11:42:07"
+        }
+    ]
+}

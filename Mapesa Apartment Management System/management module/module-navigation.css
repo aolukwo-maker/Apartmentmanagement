@@ -1,0 +1,1101 @@
+.module-navigation {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-bottom: 1px solid #e6e8e6;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.module-navigation > a,
+.module-switcher summary {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid #e2e9e4;
+  border-radius: 8px;
+  color: #435654;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.module-navigation > a:hover,
+.module-navigation > a:focus-visible,
+.module-switcher summary:hover,
+.module-switcher summary:focus-visible {
+  border-color: #a8c8b8;
+  background: #f4f8f4;
+  color: #075c59;
+}
+
+.module-navigation > .module-home {
+  border-color: #0a8077;
+  background: #0a8077;
+  color: #fff;
+}
+
+.module-navigation > .module-home:hover,
+.module-navigation > .module-home:focus-visible {
+  border-color: #075c59;
+  background: #075c59;
+  color: #fff;
+}
+
+.module-switcher {
+  position: relative;
+}
+
+.module-switcher summary {
+  list-style: none;
+}
+
+.module-switcher summary::-webkit-details-marker {
+  display: none;
+}
+
+.module-switcher summary::after {
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  content: "";
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.module-switcher[open] summary::after {
+  transform: translateY(2px) rotate(225deg);
+}
+
+.module-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 10;
+  display: grid;
+  width: min(260px, calc(100vw - 28px));
+  max-height: min(70vh, 420px);
+  gap: 3px;
+  overflow-y: auto;
+  padding: 7px;
+  border: 1px solid #e2e9e4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(29, 45, 47, 0.14);
+}
+
+.module-menu a {
+  padding: 10px 11px;
+  border-radius: 7px;
+  color: #53615f;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.module-menu a:hover,
+.module-menu a:focus-visible,
+.module-menu a[aria-current="page"] {
+  background: #e8f1ec;
+  color: #075c59;
+}
+
+.live-dashboard {
+  margin: 18px 24px 0;
+  padding: 18px;
+  border: 1px solid #dce8df;
+  border-radius: 12px;
+  background: #f4f8f4;
+  color: #1d2d2f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.live-dashboard-hub {
+  max-width: 1050px;
+  margin: 0 auto 18px;
+  padding: 12px 16px;
+}
+
+.live-dashboard-hub .live-dashboard-heading {
+  margin: 0;
+}
+
+.live-dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.live-dashboard-eyebrow {
+  color: #0a8077;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.live-dashboard h2 {
+  margin: 4px 0 0;
+  font: 700 17px "Space Grotesk", sans-serif;
+}
+
+.live-dashboard-status {
+  color: #637171;
+  font-size: 12px;
+  text-align: right;
+}
+
+.live-dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.live-dashboard-card {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e5e8e6;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.live-dashboard-card span {
+  display: block;
+  min-height: 30px;
+  color: #637171;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.live-dashboard-card strong {
+  display: block;
+  margin-top: 7px;
+  overflow-wrap: anywhere;
+  font: 700 clamp(15px, 1.6vw, 21px) "Space Grotesk", sans-serif;
+}
+
+.live-dashboard-card .live-dashboard-module {
+  min-height: 0;
+  margin: 0 0 8px;
+  color: #0a8077;
+  font-size: 13px;
+}
+
+body.has-live-dashboard .main-content .metric-grid,
+body.has-live-dashboard .main-content .summary-grid,
+body.has-live-dashboard .main-content .stat-grid {
+  display: none;
+}
+
+.live-dashboard-hub .live-dashboard-metrics {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.live-dashboard-error {
+  border-color: #efc9c5;
+  background: #fff7f6;
+}
+
+.live-dashboard-error .live-dashboard-status {
+  color: #a83e35;
+}
+
+.manager-account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 16px 24px 0;
+  padding: 12px 16px;
+  border: 1px solid #e2e9e4;
+  border-radius: 10px;
+  background: #fff;
+  color: #1d2d2f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.manager-account-hub {
+  max-width: 1050px;
+  margin: 0 auto 18px;
+}
+
+.manager-account-details {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.manager-account-label {
+  color: #0a8077;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.manager-account-name {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.manager-account-email {
+  overflow-wrap: anywhere;
+  color: #637171;
+  font-size: 12px;
+}
+
+.manager-account-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 14px;
+}
+
+.manager-account-actions a {
+  color: #075c59;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.manager-account-actions a:hover,
+.manager-account-actions a:focus-visible {
+  text-decoration: underline;
+}
+
+.management-hub {
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 64px);
+  background: #f8faf7;
+  color: #1d2d2f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.management-hub header {
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.management-hub .hub-eyebrow {
+  color: #0a8077;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.management-hub h1 {
+  margin: 10px 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -0.04em;
+}
+
+.management-hub header p {
+  color: #637171;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.management-hub .hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.management-hub .hub-card {
+  display: flex;
+  min-height: 210px;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid #e5e8e6;
+  border-radius: 12px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.management-hub .hub-card:hover,
+.management-hub .hub-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: #8bb9a7;
+  box-shadow: 0 12px 28px rgba(29, 45, 47, 0.08);
+}
+
+.management-hub .hub-card span {
+  color: #0a8077;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.management-hub .hub-card h2 {
+  margin: 16px 0 8px;
+  font: 700 19px "Space Grotesk", sans-serif;
+}
+
+.management-hub .hub-card p {
+  margin: 0;
+  color: #637171;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.management-hub .hub-card .hub-card-metric {
+  display: block;
+  margin-top: auto;
+  padding-top: 18px;
+  color: #075c59;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+/* Shared Mapesa visual language for every management workspace. */
+.app-shell {
+  min-height: 100vh;
+  background: #f5f8f7;
+  color: #1d2d2f;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+}
+
+.app-shell > .sidebar {
+  width: 248px;
+  min-width: 248px;
+  min-height: 100vh;
+  flex: 0 0 248px;
+  padding: 26px 16px 18px;
+  border: 0;
+  border-right: 1px solid #204b4b;
+  background: #123b3d;
+  color: #e8f1ef;
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell .brand {
+  color: #f4f8f7;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  letter-spacing: -0.4px;
+}
+
+.app-shell .brand-mark {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: #f0ad62;
+  color: #173c3e;
+  box-shadow: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+}
+
+.app-shell .brand small,
+.app-shell .brand span,
+.app-shell .brand-subtitle {
+  color: #a6c0b9;
+}
+
+.app-shell .workspace-label,
+.app-shell .nav-label,
+.app-shell .sidebar-label,
+.app-shell .sidebar .eyebrow {
+  color: #91ada8;
+}
+
+.app-shell .main-nav,
+.app-shell .nav-list {
+  gap: 4px;
+}
+
+.app-shell .nav-item {
+  min-height: 42px;
+  height: auto;
+  margin: 2px 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #bdd0cc;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.app-shell .nav-item:hover {
+  background: #1b5050;
+  color: #fff;
+}
+
+.app-shell .nav-item.active {
+  background: #1d5c55;
+  box-shadow: inset 3px 0 #f0ad62;
+  color: #fff;
+  font-weight: 700;
+}
+
+.app-shell .sidebar-bottom,
+.app-shell .sidebar-footer {
+  color: #e8f1ef;
+}
+
+.app-shell .sidebar-bottom strong,
+.app-shell .sidebar-footer strong,
+.app-shell .user-info strong,
+.app-shell .profile-copy strong {
+  color: #f3f7f6;
+}
+
+.app-shell .sidebar-bottom small,
+.app-shell .sidebar-bottom span,
+.app-shell .sidebar-footer span,
+.app-shell .user-info span,
+.app-shell .profile-copy span {
+  color: #a6c0b9;
+}
+
+.app-shell > .main-content {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  flex: 1 1 0;
+  margin: 0;
+  padding: 0 0 48px;
+  overflow: visible;
+  background: #f5f8f7;
+  color: #1d2d2f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell .topbar {
+  min-height: 76px;
+  height: auto;
+  padding: 0 clamp(22px, 3.5vw, 48px);
+  border-bottom: 1px solid #e3eae7;
+  background: #fff;
+  color: #1d2d2f;
+}
+
+.app-shell .breadcrumbs,
+.app-shell .breadcrumb {
+  color: #83928f;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+}
+
+.app-shell .breadcrumbs strong,
+.app-shell .breadcrumb strong {
+  color: #263b3a;
+}
+
+.app-shell .page,
+.app-shell .page-wrap,
+.app-shell .page-view,
+.app-shell .page-heading,
+.app-shell > .main-content > section:not(.module-navigation),
+.app-shell > .main-content > .control-strip,
+.app-shell > .main-content > .report-area,
+.app-shell > .main-content > footer {
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell .page-heading h1,
+.app-shell .page h1,
+.app-shell .page-wrap h1,
+.app-shell .page-view h1 {
+  color: #1d2d2f;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.app-shell .page-heading p,
+.app-shell .page-heading .subheading,
+.app-shell .page-heading .subtitle {
+  color: #728084;
+}
+
+.app-shell .eyebrow {
+  color: #0a8077;
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell .metric-card,
+.app-shell .summary-card,
+.app-shell .stat-card,
+.app-shell .panel,
+.app-shell .content-panel,
+.app-shell .report-card {
+  border: 1px solid #e3eae7;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(29, 45, 47, 0.045);
+}
+
+.app-shell .panel h2,
+.app-shell .panel-heading h2,
+.app-shell .section-heading h2,
+.app-shell .panel-header h2 {
+  color: #233b3a;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+}
+
+.app-shell .primary-button,
+.app-shell .button.primary,
+.app-shell .primary-button:hover,
+.app-shell .button.primary:hover {
+  border-color: #0a8077;
+  background: #0a8077;
+  color: #fff;
+  box-shadow: none;
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell .primary-button:hover,
+.app-shell .button.primary:hover {
+  background: #075c59;
+}
+
+.app-shell .button,
+.app-shell .secondary-button,
+.app-shell .outline-button,
+.app-shell .filter-button,
+.app-shell .filter-select,
+.app-shell .text-button,
+.app-shell .text-link {
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell input:not([type="checkbox"]):not([type="radio"]),
+.app-shell select,
+.app-shell textarea {
+  border-color: #dbe4e0;
+  border-radius: 7px;
+  color: #263b3a;
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell input:focus,
+.app-shell select:focus,
+.app-shell textarea:focus {
+  border-color: #0a8077;
+  outline-color: #0a8077;
+}
+
+.app-shell .modal {
+  border: 1px solid #e3eae7;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .module-navigation {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .live-dashboard {
+    margin-right: 14px;
+    margin-left: 14px;
+    padding: 14px;
+  }
+
+  .live-dashboard-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .live-dashboard-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .live-dashboard-status {
+    text-align: left;
+  }
+}
+
+body.has-management-sidebar {
+  margin: 0;
+}
+
+.app-shell {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.app-shell > .sidebar.management-sidebar {
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  width: 248px;
+  min-width: 248px;
+  height: 100vh;
+  min-height: 100vh;
+  flex: 0 0 248px;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 24px 14px 16px;
+  border: 0;
+  border-right: 1px solid #204b4b;
+  background: #123b3d;
+  color: #e8f1ef;
+  font-family: "DM Sans", sans-serif;
+}
+
+.app-shell > .sidebar:not(.management-sidebar) {
+  display: none;
+}
+
+.management-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5px;
+  color: #f4f8f7;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.management-brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border-radius: 9px;
+  background: #f0ad62;
+  color: #173c3e;
+  font-size: 17px;
+}
+
+.management-brand small {
+  display: block;
+  margin-top: 2px;
+  color: #a6c0b9;
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.management-sidebar-label {
+  margin: 4px 9px -12px;
+  color: #91ada8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.management-sidebar-nav {
+  display: grid;
+  gap: 4px;
+}
+
+.management-nav-link {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 11px;
+  padding: 0 11px;
+  border-radius: 8px;
+  color: #bdd0cc;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.management-nav-link:hover,
+.management-nav-link:focus-visible {
+  background: #1b5050;
+  color: #fff;
+}
+
+.management-nav-link.is-current {
+  background: #1d5c55;
+  box-shadow: inset 3px 0 #f0ad62;
+  color: #fff;
+}
+
+.management-nav-link.management-nav-action:not(.is-current) {
+  color: #f0c28f;
+}
+
+.management-nav-link.management-nav-action:not(.is-current) .management-nav-icon {
+  border-color: rgba(240, 194, 143, 0.45);
+  color: #f0c28f;
+}
+
+.management-tenant-quicklink {
+  display: inline-flex;
+  min-height: 38px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid #0a8077;
+  border-radius: 8px;
+  background: #0a8077;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.management-tenant-quicklink:hover,
+.management-tenant-quicklink:focus-visible {
+  border-color: #075c59;
+  background: #075c59;
+  color: #fff;
+}
+
+.app-shell .topbar .management-tenant-quicklink {
+  margin-left: 8px;
+}
+
+.management-hub .management-tenant-quicklink {
+  margin-top: 8px;
+}
+
+.management-page-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 24px 0;
+}
+
+.management-nav-icon {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  place-items: center;
+  border: 1px solid rgba(189, 208, 204, 0.25);
+  border-radius: 6px;
+  color: #f0ad62;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.management-sidebar .manager-account {
+  display: grid;
+  gap: 12px;
+  margin: auto 0 0;
+  padding: 14px 10px 4px;
+  border: 0;
+  border-top: 1px solid #315957;
+  border-radius: 0;
+  background: transparent;
+  color: #e8f1ef;
+}
+
+.management-sidebar .manager-account-label {
+  color: #91ada8;
+}
+
+.management-sidebar .manager-account-name {
+  color: #fff;
+}
+
+.management-sidebar .manager-account-email {
+  color: #a6c0b9;
+}
+
+.management-sidebar .manager-account-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.management-sidebar .manager-account-actions a {
+  color: #f0c28f;
+  font-size: 11px;
+}
+
+.app-shell > .main-content {
+  width: auto;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.app-shell > .management-hub {
+  min-height: 100vh;
+  padding: clamp(24px, 4vw, 48px);
+  background: #f5f8f7;
+}
+
+.tenant-registration-page {
+  min-height: 100vh;
+  padding: clamp(24px, 4vw, 48px);
+  background: #f5f8f7;
+  color: #1d2d2f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.tenant-registration-content {
+  width: min(100%, 820px);
+  margin: 0 auto;
+}
+
+.tenant-registration-heading {
+  margin-bottom: 24px;
+}
+
+.tenant-registration-heading .hub-eyebrow {
+  color: #0a8077;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.tenant-registration-heading h1 {
+  margin: 8px 0;
+  font: 800 clamp(26px, 4vw, 36px) "Manrope", sans-serif;
+}
+
+.tenant-registration-heading p,
+.tenant-registration-note {
+  color: #637171;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tenant-registration-alert {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.tenant-registration-alert ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tenant-registration-alert.is-error {
+  border-color: #efc9c5;
+  background: #fff7f6;
+  color: #91342d;
+}
+
+.tenant-registration-alert.is-success {
+  border-color: #b9dcc8;
+  background: #f0f8f2;
+  color: #176346;
+}
+
+.tenant-registration-form {
+  padding: clamp(18px, 4vw, 30px);
+  border: 1px solid #e3eae7;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(29, 45, 47, 0.045);
+}
+
+.tenant-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tenant-form-grid label {
+  display: grid;
+  gap: 7px;
+  color: #435654;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tenant-form-grid input,
+.tenant-form-grid textarea,
+.tenant-form-grid select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 11px;
+  border: 1px solid #dbe4e0;
+  border-radius: 7px;
+  background: #fff;
+  color: #263b3a;
+  font: 400 14px "DM Sans", sans-serif;
+}
+
+.tenant-form-grid textarea {
+  resize: vertical;
+}
+
+.tenant-form-grid input:focus,
+.tenant-form-grid textarea:focus,
+.tenant-form-grid select:focus {
+  border-color: #0a8077;
+  outline: 2px solid rgba(10, 128, 119, 0.15);
+}
+
+.tenant-form-wide {
+  grid-column: 1 / -1;
+}
+
+.tenant-registration-note {
+  margin: 18px 0;
+  font-size: 12px;
+}
+
+.tenant-registration-submit {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 7px;
+  background: #0a8077;
+  color: #fff;
+  font: 700 13px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.tenant-registration-submit:hover,
+.tenant-registration-submit:focus-visible {
+  background: #075c59;
+}
+
+.management-sidebar .management-nav-link.is-current {
+  text-decoration: none;
+}
+
+.management-hub header,
+.management-hub .hub-grid {
+  max-width: 1100px;
+}
+
+.management-hub header {
+  margin: 0 auto 24px;
+}
+
+.management-hub .hub-grid {
+  margin: 0 auto;
+}
+
+.app-shell .module-navigation {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    display: block;
+  }
+
+  .app-shell > .sidebar.management-sidebar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    gap: 10px;
+    overflow: visible;
+    padding: 10px 12px;
+    border-right: 0;
+    border-bottom: 1px solid #315957;
+  }
+
+  .management-brand {
+    font-size: 15px;
+  }
+
+  .management-brand-mark {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  .management-sidebar-label {
+    display: none;
+  }
+
+  .management-sidebar .manager-account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 4px 0;
+    border-top: 1px solid #315957;
+  }
+
+  .management-sidebar .manager-account-label,
+  .management-sidebar .manager-account-email {
+    display: none;
+  }
+
+  .management-sidebar .manager-account-name {
+    font-size: 12px;
+  }
+
+  .management-sidebar .manager-account-actions {
+    flex-wrap: nowrap;
+  }
+
+  .management-sidebar-nav {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+
+  .management-nav-link {
+    min-height: 36px;
+    flex: 0 0 auto;
+    gap: 7px;
+    padding: 0 9px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .management-nav-icon {
+    width: 19px;
+    height: 19px;
+    flex-basis: 19px;
+  }
+
+  .app-shell > .management-hub {
+    padding: 24px 16px;
+  }
+
+  .tenant-registration-page {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .tenant-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-form-wide {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Open Mapesa apartment management tools for finance, residents, operations, and reporting."
+    />
+    <title>Mapesa | Management Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="module-navigation.css" />
+  </head>
+  <body>
+    <main class="management-hub">
+      <header>
+        <span class="hub-eyebrow">Mapesa Apartments</span>
+        <h1>Management dashboard</h1>
+        <p>
+          Open a workspace or check the latest property activity from one
+          dashboard.
+        </p>
+      </header>
+      <section class="hub-grid" aria-label="Management workspaces">
+        <a
+          class="hub-card"
+          href="Rent%20%26%20Payment%20Module/index.php"
+          data-dashboard-module="rent"
+        >
+          <span>Finance</span>
+          <h2>Rent & payments</h2>
+          <p>Record rent, track balances, and review tenant payment history.</p>
+          <span class="hub-card-metric" data-dashboard-metric>Loading live data…</span>
+        </a>
+        <a
+          class="hub-card"
+          href="Financial%20Management%20Module/index.html"
+          data-dashboard-module="finance"
+        >
+          <span>Finance</span>
+          <h2>Financial management</h2>
+          <p>Manage income, expenses, outstanding accounts, and statements.</p>
+          <span class="hub-card-metric" data-dashboard-metric>Loading live data…</span>
+        </a>
+        <a
+          class="hub-card"
+          href="Maintenance%20Module/index.html"
+          data-dashboard-module="maintenance"
+        >
+          <span>Operations</span>
+          <h2>Maintenance</h2>
+          <p>Coordinate repair requests, assignments, and work progress.</p>
+          <span class="hub-card-metric" data-dashboard-metric>Loading live data…</span>
+        </a>
+        <a
+          class="hub-card"
+          href="Utility%20%20Management%20Module/index.html"
+          data-dashboard-module="utilities"
+        >
+          <span>Operations</span>
+          <h2>Utility management</h2>
+          <p>Capture meter readings and manage consumption and billing.</p>
+          <span class="hub-card-metric" data-dashboard-metric>Loading live data…</span>
+        </a>
+        <a
+          class="hub-card"
+          href="Complaints%20%20Feedback%20Module/index.html"
+          data-dashboard-module="complaints"
+        >
+          <span>Resident services</span>
+          <h2>Complaints & feedback</h2>
+          <p>Review resident concerns and coordinate resolutions.</p>
+          <span class="hub-card-metric" data-dashboard-metric>Loading live data…</span>
+        </a>
+        <a
+          class="hub-card"
+          href="Communication%20%26%20Notification%20Module/index.html"
+          data-dashboard-module="communication"
+        >
+          <span>Resident services</span>
+          <h2>Communication</h2>
+          <p>Send resident updates and manage property announcements.</p>
+          <span class="hub-card-metric" data-dashboard-metric>Loading live data…</span>
+        </a>
+        <a
+          class="hub-card"
+          href="Reports%20%26%20Analytics%20Module/index.html"
+          data-dashboard-module="reports"
+        >
+          <span>Insights</span>
+          <h2>Reports & analytics</h2>
+          <p>Review property performance and export management reports.</p>
+          <span class="hub-card-metric" data-dashboard-metric>Loading live data…</span>
+        </a>
+      </section>
+    </main>
+    <script src="management-live.js"></script>
+  </body>
+</html>

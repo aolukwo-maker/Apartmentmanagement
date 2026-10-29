@@ -1,0 +1,26 @@
+[
+    {
+        "id": "bad5495c",
+        "full_name": "AMOS MAPESA",
+        "phone": "0746151340",
+        "id_number": "23456",
+        "company": "tre",
+        "tenant_name": "Jane Wanjiku",
+        "unit_id": "456",
+        "visit_purpose": "health",
+        "visitor_type": "family",
+        "status": "expected",
+        "scheduled_date": "2026-09-17",
+        "check_in_time": "",
+        "check_out_time": "",
+        "security_note": "helo",
+        "registered_by": "Front desk",
+        "created_at": "2026-09-17 21:39:31",
+        "history": [
+            {
+                "date": "2026-09-17 21:39:31",
+                "message": "Visitor registered by front desk."
+            }
+        ]
+    }
+]

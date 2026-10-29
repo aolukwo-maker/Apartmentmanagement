@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ledger | Financial Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20261029-0858" />
+    <link rel="stylesheet" href="../module-navigation.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">M</span
+          ><span>Mapesa <small>APARTMENTS</small></span>
+        </div>
+        <div class="workspace-label">FINANCIAL CONTROL</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard">
+            <span>◈</span>Overview
+          </button>
+          <button class="nav-item" data-view="transactions">
+            <span>↕</span>Transactions
+          </button>
+          <button class="nav-item" data-view="outstanding">
+            <span>◷</span>Outstanding
+          </button>
+          <button class="nav-item" data-view="statements">
+            <span>▤</span>Statements
+          </button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="period-card">
+            <span class="eyebrow">CURRENT PERIOD</span
+            ><strong>September 2026</strong
+            ><span class="period-status"><i></i> Books are up to date</span>
+          </div>
+          <button class="profile">
+            <span class="avatar" data-manager-initials>M</span
+            ><span
+              ><strong data-manager-name>Manager account</strong
+              ><small data-manager-role>Manager</small></span
+            ><b>···</b>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs">
+            Mapesa Apartments <span>/</span>
+            <strong id="page-label">Overview</strong>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" title="Notifications">♧<em></em></button
+            ><button class="user-avatar">MK</button>
+          </div>
+        </header>
+        <nav class="module-navigation" aria-label="Management modules">
+          <a class="module-home" href="../index.html">Dashboard</a>
+          <details class="module-switcher">
+            <summary>Workspaces</summary>
+            <div class="module-menu">
+              <a href="../Rent%20%26%20Payment%20Module/index.php"
+                >Rent & payments</a
+              >
+              <a href="index.html" aria-current="page">Financial management</a>
+              <a href="../Maintenance%20Module/index.html">Maintenance</a>
+              <a href="../Utility%20%20Management%20Module/index.html"
+                >Utilities</a
+              >
+              <a href="../Complaints%20%20Feedback%20Module/index.html"
+                >Complaints & feedback</a
+              >
+              <a
+                href="../Communication%20%26%20Notification%20Module/index.html"
+                >Communication</a
+              >
+              <a href="../Reports%20%26%20Analytics%20Module/index.html"
+                >Reports & analytics</a
+              >
+            </div>
+          </details>
+        </nav>
+        <div id="app-view"></div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="transaction-modal" hidden>
+      <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="modal-close" id="close-modal" aria-label="Close">
+          ×
+        </button>
+        <span class="eyebrow">FINANCIAL MANAGEMENT</span>
+        <h2 id="modal-title">Record a transaction</h2>
+        <p class="modal-intro" id="transaction-intro">
+          Record rent income against a charge or add a property expense.
+        </p>
+        <form id="transaction-form">
+          <div class="type-heading">
+            <strong>Transaction type</strong>
+            <span>Choose where this record belongs.</span>
+          </div>
+          <div class="type-toggle">
+            <label class="type-option income-option">
+              <input type="radio" name="type" value="income" checked />
+              <span>
+                <strong>Rent income</strong>
+                <small>Apply a payment to an open rent charge</small>
+              </span>
+            </label>
+            <label class="type-option expense-option">
+              <input type="radio" name="type" value="expense" />
+              <span>
+                <strong>Expense</strong>
+                <small>Record a property cost</small>
+              </span>
+            </label>
+          </div>
+          <p class="transaction-type-help" id="transaction-type-help"></p>
+          <div class="form-grid">
+            <label id="transaction-property-field">
+              Property
+              <select name="propertyId" required>
+                <option value="">Loading properties…</option>
+              </select>
+              <small class="field-help" id="property-help">Select the property this transaction belongs to.</small>
+            </label>
+            <label id="income-charge-field"
+              >Rent charge<select name="ledgerId" required>
+                <option value="">Loading unpaid rent charges…</option>
+              </select>
+              <small class="field-help"
+                >Payments are recorded against the selected tenant and
+                charge.</small
+              >
+            </label>
+            <label id="expense-description-field" hidden
+              >Expense description<input
+                name="description"
+                maxlength="230"
+                placeholder="e.g. Common area lighting repair"
+                disabled
+              />
+              <small class="field-help"
+                >Use a clear description that will be easy to identify
+                later.</small
+              >
+            </label>
+            <label>
+              <span id="amount-label">Amount received (KES)</span>
+              <input
+                name="amount"
+                type="number"
+                min="0.01"
+                step="0.01"
+                required
+                placeholder="0.00"
+              />
+              <small class="field-help" id="amount-help"
+                >Enter the amount received. The maximum is the charge
+                balance.</small
+              >
+            </label>
+            <label id="expense-category-field" hidden
+              >Expense category<select name="category">
+                <option>Maintenance</option>
+                <option>Utilities</option>
+                <option>Staff & operations</option>
+                <option>Other expense</option>
+              </select>
+              <small class="field-help"
+                >This category is included with the description in the expense
+                record.</small
+              >
+            </label>
+            <label>
+              <span id="date-label">Payment date</span>
+              <input name="date" type="date" required />
+            </label>
+            <label id="income-reference-field"
+              >Payment reference (optional)<input
+                name="reference"
+                maxlength="100"
+                placeholder="Receipt or payment reference"
+              />
+              <small class="field-help"
+                >Add a receipt number or payment reference if available.</small
+              >
+            </label>
+          </div>
+          <p
+            id="transaction-form-message"
+            class="form-message"
+            role="alert"
+            hidden
+          ></p>
+          <div class="form-actions">
+            <button type="button" class="button ghost" id="cancel-modal">
+              Cancel
+            </button>
+            <button class="button primary" type="submit">
+              <span id="save-transaction-label">Save rent payment</span
+              ><span>→</span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <script src="../management-live.js"></script>
+    <script src="app.js?v=20261029-0916"></script>
+  </body>
+</html>
